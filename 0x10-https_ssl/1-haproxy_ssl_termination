@@ -38,9 +38,9 @@ defaults
 frontend http-front
 	bind *:80
         bind *:443 ssl crt /etc/letsencrypt/live/www.diorigamy.tech/www.diorigamy.tech.pem
-        http-request add-header X-Forwarded-Proto http
-        redirect scheme https  if !{ ssl_fc }
-        use_backend http_back
+        #http-request add-header X-Forwarded-Proto http
+        redirect scheme https code 301 if !{ ssl_fc }
+	use_backend http_back
 
 
 backend http_back
