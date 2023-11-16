@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+"""the default server listens on port 80 for a request which is a proxy locoalhost on  port 5001"""
 
 server {
         listen 80 default_server;
